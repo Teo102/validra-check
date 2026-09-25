@@ -1,0 +1,45 @@
+{
+  "name": "validra-check",
+  "version": "0.1.0",
+  "description": "Find what your web app exposes to anyone: leaked API keys in client code and Supabase tables readable without logging in. One command, no install.",
+  "type": "module",
+  "bin": {
+    "validra-check": "bin/validra-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "supabase",
+    "rls",
+    "row-level-security",
+    "security",
+    "secrets",
+    "api-keys",
+    "lovable",
+    "bolt",
+    "cursor",
+    "vibe-coding",
+    "nextjs",
+    "scanner"
+  ],
+  "author": "Téo Brondel <teobrondel6@gmail.com> (https://validra.dev/en/teo-brondel)",
+  "homepage": "https://validra.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teo102/validra-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Teo102/validra-check/issues"
+  },
+  "license": "MIT"
+}
