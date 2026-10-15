@@ -31,7 +31,7 @@ Values are always **redacted** in the output (first 10 and last 4 characters).
 
 ### 2. Supabase tables readable without logging in
 
-**When:** only if the client code contains both a Supabase project URL (`https://<ref>.supabase.co`) and a public key (anon JWT or `sb_publishable_…`). This is normal for any Supabase app; the public key is meant to be in the browser, and Row-Level Security is what protects the data.
+**When:** only if the client code contains both a Supabase project URL and a public key (anon JWT or `sb_publishable_…`). Recognized URLs are hosted projects (`https://<ref>.supabase.co`) and the default local stack (`http://127.0.0.1:54321` or `http://localhost:54321`, as started by `supabase start`). Any other localhost address is ignored, so a leftover development URL in a production bundle never triggers requests. Keys issued by hosted projects (`iss: "supabase"`) and by the local CLI (`iss: "supabase-demo"`) are both accepted. This is normal for any Supabase app; the public key is meant to be in the browser, and Row-Level Security is what protects the data.
 
 **How:**
 
@@ -90,4 +90,4 @@ A clean result means "nothing found by these checks", not "this application is s
 
 ## Reproducing results
 
-The test suite (`npm test`) runs every check against fake responses, without any network access. See the [README](../README.md) for usage.
+The unit tests (`npm test`) run every check against fake responses, without network access. An end-to-end test also runs the tool over real HTTP against the local demo app in [`demo/`](../demo/EXPECTED.md) and checks the exact list of findings. Anyone can run the same demo by hand.

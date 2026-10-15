@@ -61,6 +61,18 @@ The tool will stay read-only. Pull requests that add writing, exploitation, data
 
 Found a problem in the tool itself? See [SECURITY.md](SECURITY.md).
 
+## Try it without scanning anyone
+
+The repository includes a deliberately vulnerable demo app that runs only on your machine, with fake data:
+
+```bash
+git clone https://github.com/Teo102/validra-check && cd validra-check
+npm run demo                                   # terminal 1
+node bin/validra-check.js http://127.0.0.1:54321   # terminal 2
+```
+
+The expected results, and what the demo does and doesn't imitate, are in [demo/EXPECTED.md](demo/EXPECTED.md). A test checks that exact output on every push.
+
 ## Options
 
 ```

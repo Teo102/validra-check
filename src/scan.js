@@ -7,6 +7,12 @@ const MAX_SCRIPT_BYTES = 5_000_000;
 const MAX_TABLES = 60;
 
 const SUPABASE_URL_RE = /https:\/\/([a-z0-9]{20})\.supabase\.co/g;
+// Default address of a local Supabase stack (`supabase start`). Only this
+// exact host and port are recognized, so a stray localhost URL in a
+// production bundle never triggers requests.
+const LOCAL_SUPABASE_RE = /http:\/\/(?:127\.0\.0\.1|localhost):54321(?![0-9])/g;
+// Hosted projects issue keys with iss "supabase"; the local CLI uses "supabase-demo".
+const SUPABASE_ISSUERS = new Set(["supabase", "supabase-demo"]);
 const JWT_RE = /\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/g;
 const PUBLISHABLE_RE = /\bsb_publishable_[A-Za-z0-9_-]{20,}/g;
 
@@ -23,14 +29,16 @@ function decodeJwtPayload(token) {
 export function analyzeText(text) {
   const findings = [];
   const supabaseRefs = new Set();
+  const localBases = new Set();
   const publicKeys = new Set();
 
   for (const m of text.matchAll(SUPABASE_URL_RE)) supabaseRefs.add(m[1]);
+  for (const m of text.matchAll(LOCAL_SUPABASE_RE)) localBases.add(m[0].replace("localhost", "127.0.0.1"));
   for (const m of text.matchAll(PUBLISHABLE_RE)) publicKeys.add(m[0]);
 
   for (const m of text.matchAll(JWT_RE)) {
     const payload = decodeJwtPayload(m[0]);
-    if (!payload || payload.iss !== "supabase") continue;
+    if (!payload || !SUPABASE_ISSUERS.has(payload.iss)) continue;
     if (payload.ref) supabaseRefs.add(payload.ref);
     if (payload.role === "service_role") {
       findings.push({
@@ -56,7 +64,7 @@ export function analyzeText(text) {
     }
   }
 
-  return { findings, supabaseRefs: [...supabaseRefs], publicKeys: [...publicKeys] };
+  return { findings, supabaseRefs: [...supabaseRefs], localBases: [...localBases], publicKeys: [...publicKeys] };
 }
 
 async function get(url, fetchImpl, headers = {}) {
@@ -202,13 +210,17 @@ export async function scan(pageUrl, { extraTables = [], fetchImpl = fetch } = {}
   const findings = [...analysis.findings];
   const supabase = [];
 
-  for (const ref of analysis.supabaseRefs) {
+  const projects = [
+    ...analysis.supabaseRefs.map((ref) => ({ ref, baseUrl: `https://${ref}.supabase.co` })),
+    ...analysis.localBases.map((baseUrl) => ({ ref: "local", baseUrl })),
+  ];
+  for (const { ref, baseUrl } of projects) {
     const key = analysis.publicKeys[0];
     if (!key) {
       supabase.push({ ref, skipped: "No public Supabase key found in the client code." });
       continue;
     }
-    const probe = await probeSupabase({ ref, key, extraTables, fetchImpl });
+    const probe = await probeSupabase({ ref, key, baseUrl, extraTables, fetchImpl });
     findings.push(...probe.findings);
     supabase.push({ ref, checked: probe.checked, schemaPublic: probe.schemaPublic });
   }
