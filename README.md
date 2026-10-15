@@ -1,5 +1,9 @@
 # validra-check
 
+[![tests](https://github.com/Teo102/validra-check/actions/workflows/test.yml/badge.svg)](https://github.com/Teo102/validra-check/actions/workflows/test.yml)
+[![npm](https://img.shields.io/npm/v/validra-check)](https://www.npmjs.com/package/validra-check)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Find what your web app exposes to anyone, in about a minute.
 
 ```bash
@@ -41,7 +45,21 @@ A clean result is a good sign, not a guarantee.
 - **No data shown.** Row values are never printed or stored; only table and column names.
 - **No telemetry.** Nothing is sent anywhere except to the app you scan.
 
-Only scan apps you own or are authorized to test.
+Every finding is rated by **severity** (how bad it would be) and **confidence** (`demonstrated`, `weakness`, or `observation`: how much the tool actually proved). The full method, known false positives, and limits are in [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+
+## Responsible use
+
+Run validra-check **only on applications you own, or that you have written permission to test.**
+
+Even though the tool only does what a browser does, accessing data in a system without authorization can be illegal (for example under article 323-1 of the French Penal Code, or the Computer Fraud and Abuse Act in the US), and it is not okay regardless of the law.
+
+- Do not use it to scan other people's apps "to show them a problem". Ask first, in writing.
+- If you find a real issue in an app you are authorized to test, report it privately to its owner and give them time to fix it before mentioning it anywhere.
+- Do not publish results that identify an application or its data.
+
+The tool will stay read-only. Pull requests that add writing, exploitation, data extraction, or authentication bypass will not be accepted.
+
+Found a problem in the tool itself? See [SECURITY.md](SECURITY.md).
 
 ## Options
 

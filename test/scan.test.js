@@ -106,3 +106,19 @@ test("CLI reads the URL whether or not --tables is passed", async () => {
     assert.doesNotMatch(out, /Please pass the URL/);
   }
 });
+
+test("every finding has a severity and a confidence level", async () => {
+  const levels = ["observation", "weakness", "demonstrated"];
+  const text = analyzeText(`k="${SERVICE}" s="sk_live_${"a".repeat(30)}"`);
+  const probe = await probeSupabase({ ref: REF, key: ANON, baseUrl: "https://db.test", fetchImpl: fakeSupabase({ publishSchema: true }) });
+  const all = [...text.findings, ...probe.findings];
+  assert.ok(all.length >= 5);
+  for (const f of all) {
+    assert.ok(["critical", "high", "medium", "info"].includes(f.severity), f.title);
+    assert.ok(levels.includes(f.confidence), `${f.title} -> ${f.confidence}`);
+  }
+  // Rows actually came back, so the table finding is demonstrated; a key that
+  // only matches a format is not.
+  assert.equal(probe.findings.find((f) => f.title.includes("profiles")).confidence, "demonstrated");
+  assert.equal(text.findings.find((f) => f.title.includes("Stripe")).confidence, "weakness");
+});

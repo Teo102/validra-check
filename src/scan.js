@@ -35,6 +35,7 @@ export function analyzeText(text) {
     if (payload.role === "service_role") {
       findings.push({
         severity: "critical",
+        confidence: "demonstrated",
         title: "Supabase service_role key shipped to the browser",
         detail: `${redact(m[0])} — bypasses Row-Level Security entirely: full read/write access to the database.`,
       });
@@ -48,7 +49,10 @@ export function analyzeText(text) {
     for (const m of text.matchAll(p.regex)) {
       if (seen.has(m[0])) continue;
       seen.add(m[0]);
-      findings.push({ severity: p.severity, title: `${p.name} exposed in client code`, detail: `${redact(m[0])} — ${p.why}` });
+      // "weakness": the value matches the provider's key format, but the tool
+      // never calls third-party APIs, so it cannot tell a live key from a
+      // revoked or fake one.
+      findings.push({ severity: p.severity, confidence: "weakness", title: `${p.name} exposed in client code`, detail: `${redact(m[0])} — ${p.why}` });
     }
   }
 
@@ -129,6 +133,7 @@ export async function probeSupabase({ ref, key, baseUrl, extraTables = [], fetch
   if (schemaPublic) {
     findings.push({
       severity: "info",
+      confidence: "observation",
       title: "Database table list is public",
       detail: `Anyone can list your ${tables.size} tables. Not a leak by itself, but it maps your data model for an attacker.`,
     });
@@ -162,6 +167,7 @@ export async function probeSupabase({ ref, key, baseUrl, extraTables = [], fetch
     checked.push({ table, status: "exposed", columns, sensitive });
     findings.push({
       severity: sensitive.length ? "critical" : "high",
+      confidence: "demonstrated",
       title: `Table "${table}" is readable without logging in`,
       detail: sensitive.length
         ? `Columns include ${sensitive.join(", ")}. Check its Row-Level Security policies.`
@@ -177,6 +183,7 @@ export async function probeSupabase({ ref, key, baseUrl, extraTables = [], fetch
       for (const b of pub) {
         findings.push({
           severity: "medium",
+          confidence: "weakness",
           title: `Storage bucket "${b.name}" is public`,
           detail: "Every file in it can be downloaded by anyone with the URL. Fine for logos, not for invoices or IDs.",
         });

@@ -83,7 +83,7 @@ try {
     }
     for (const f of result.findings) {
       const style = SEVERITY_STYLE[f.severity] ?? dim;
-      console.log(`\n  ${style(bold(f.severity.toUpperCase()))}  ${bold(f.title)}`);
+      console.log(`\n  ${style(bold(f.severity.toUpperCase()))}  ${bold(f.title)}  ${dim("[" + f.confidence + "]")}`);
       console.log(`  ${dim(f.detail)}`);
     }
 
