@@ -48,9 +48,9 @@ Whenever a security questionnaire asks about a security control, structure your 
 
 **Question:** *Do you conduct third-party penetration testing and regular vulnerability assessments?*
 
-- **Affirmation:** Yes, our application undergoes independent third-party security reviews and automated vulnerability scanning.
-- **Evidence:** Application source code and API endpoints undergo independent external security testing conducted by Validra ([https://validra.dev](https://validra.dev)). Testing covers the OWASP Top 10, multi-tenant isolation verification, and PostgreSQL Row-Level Security checks. An official signed Letter of Attestation confirms that all high and critical findings were remediated and verified through retesting. Automated dependency scanning runs on every pull request via GitHub Dependabot.
-- **Limitation:** Full scope pentesting is focused on our application layer, public APIs, and database policies rather than testing the underlying hyperscale cloud provider network.
+- **Affirmation:** Yes, our application had an external security review and uses automated vulnerability scanning. [Adapt to what is true for your company.]
+- **Evidence:** An external manual security review was carried out by Validra ([https://validra.dev](https://validra.dev)) on [date]. It covered OWASP Top 10 categories, multi-tenant isolation, and PostgreSQL Row-Level Security checks. A review confirmation letter states the fix status at retest. Automated dependency scanning runs on every pull request via GitHub Dependabot.
+- **Limitation:** The review is focused on our application layer, public APIs, and database policies rather than testing the underlying hyperscale cloud provider network.
 
 ---
 
@@ -97,6 +97,6 @@ Whenever a security questionnaire asks about a security control, structure your 
 ## Summary Checklist Before Submitting
 
 1. Ensure every "Yes" response includes a tangible technical proof or audit reference.
-2. Attach your signed Validra Letter of Attestation as Annex A.
+2. Attach your review confirmation letter as Annex A, if you have one.
 3. Attach your Data Processing Addendum (DPA) and Subprocessor List as Annex B.
 4. Avoid unverified promises of future SOC 2 dates unless a formal audit window is already booked.

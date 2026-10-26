@@ -26,7 +26,7 @@ When planning your cybersecurity budget, you must distinguish between three sepa
 | **Freelance Consultant (Daily Rate)** | €2,400 - €6,000 | 2 - 3 weeks | Moderate to good | Variable format without retest |
 | **Enterprise Pentest Agency** | €5,000 - €25,000 | 3 - 6 weeks | Thorough but often bloated | Bulky 80-page technical PDF |
 | **Enterprise SOC 2 Audit** | €20,000 - €80,000 | 6 - 12 months | Corporate policy & compliance | Formal Type II CPA report |
-| **Validra Security Review** | €395 - €790 maximum | ~5 business days | Targeted on the 6 critical attack surfaces | Official signed Letter of Attestation |
+| **Validra Security Review** | €395 - €790 maximum | ~5 business days | Targeted on the 6 critical attack surfaces | Report + review confirmation letter |
 
 ---
 
@@ -55,6 +55,6 @@ curl -s -o /dev/null -w "%{http_code}" https://api.your-saas.com/api/projects/pr
 
 ## Resources
 
-- [Official Letter of Attestation Template](../../templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [Review confirmation letter template](../../templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
 - [B2B Security Questionnaire Master Answers](../../templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
 - [Validra Security Review Pricing](https://validra.dev/en/pricing)

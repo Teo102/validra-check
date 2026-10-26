@@ -36,11 +36,9 @@
     "scanner",
     "owasp",
     "saas-security",
-    "penetration-testing",
     "security-audit",
     "idor",
     "bola",
-    "compliance",
     "security-checklist"
   ],
   "author": "Téo Brondel <teobrondel6@gmail.com> (https://validra.dev/en/teo-brondel)",

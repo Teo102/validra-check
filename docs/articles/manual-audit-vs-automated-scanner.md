@@ -26,7 +26,7 @@
 | Stripe webhook tampering & replay | ❌ Blind | ❌ Blind | ❌ Not tested | ✅ Tested with tampered signatures & payload replays |
 | Client-side secret exposure | ❌ Blind | ⚠️ Basic regex | ❌ Not tested | ✅ In-depth inspection of production bundle chunks |
 | False positive noise | ⚠️ High | ⚠️ High on dead code | ⚠️ High | 0 false positives because every flaw is proven |
-| Buyer Due Diligence deliverable | ❌ Rejected | ❌ Rejected | ❌ Rejected | ✅ Signed Letter of Attestation |
+| Buyer Due Diligence deliverable | ❌ Rejected | ❌ Rejected | ❌ Rejected | ✅ Report + review confirmation letter |
 
 ---
 

@@ -16,13 +16,13 @@ The primary motivation is risk transfer and regulatory compliance. Under the GDP
 
 Checking "Yes" to questions without technical evidence creates major legal exposure if an incident occurs. Answering "No" or leaving vague answers causes deals to stall indefinitely. 
 
-Providing a signed independent Letter of Attestation confirms that your application has undergone an external security review, enabling procurement to approve the software without requiring a 30,000 USD SOC 2 Type II audit.
+Providing a review confirmation letter shows that your application has had an external security review, which can help procurement move forward without waiting for a SOC 2 Type II audit, depending on what the buyer accepts.
 
 | Standard Format | Typical Issuer | Average Length | Key Verification Needed |
 | :--- | :--- | :--- | :--- |
-| **Google VSAQ** | Tech scale-ups and modern buyers | 40 to 100 questions | External application review attestation |
+| **Google VSAQ** | Tech scale-ups and modern buyers | 40 to 100 questions | Evidence of an external application review |
 | **CSA CAIQ** | Enterprise cloud customers | 150 to 250 questions | Multi-tenant isolation and encryption proofs |
-| **SIG Lite** | Financial institutions and banks | 100 to 150 questions | Signed annual pentest attestation |
+| **SIG Lite** | Financial institutions and banks | 100 to 150 questions | Annual penetration test evidence |
 | **Custom Procurement Excel** | Corporate risk teams and CISOs | 50 to 200 questions | Third-party letter and remediation retest |
 
 ---
@@ -53,7 +53,7 @@ To build trust, structure every technical response using the three-part framewor
 
 ### 3. Application Security Testing and Pentesting
 - **Claim:** The application undergoes regular human-led security reviews and continuous automated testing.
-- **Evidence:** Independent application security testing is conducted by Validra ([https://validra.dev](https://validra.dev)). The review validates multi-tenant isolation, OWASP Top 10 vulnerabilities, and Row-Level Security policies. A signed Letter of Attestation confirms that all high and critical issues were remediated.
+- **Evidence:** An external manual security review was carried out by Validra ([https://validra.dev](https://validra.dev)) on [date]. It covered multi-tenant isolation, OWASP Top 10 categories, and Row-Level Security policies. A review confirmation letter states the fix status at retest.
 - **Limitation:** Pentest scope covers custom application code and API endpoints rather than hyperscale provider network hardware.
 
 ### 4. Multi-Tenant Data Isolation
@@ -78,18 +78,18 @@ To build trust, structure every technical response using the three-part framewor
 
 ---
 
-## 4. The Role of the Signed Letter of Attestation
+## 4. The Role of a Review Confirmation Letter
 
-Enterprise prospects frequently ask for your penetration test report. Sending your full technical report is dangerous because it discloses exact vulnerability details and code reproduction steps.
+Enterprise prospects frequently ask for evidence of a recent security review. Sending your full technical report is dangerous because it discloses exact vulnerability details and code reproduction steps.
 
-The accepted industry standard is providing a **Signed Letter of Attestation**. This executive document confirms:
+A common practice is to provide a short **review confirmation letter**. This document confirms:
 
 - The exact application scope and URL audited.
 - The standard methodology used (OWASP Top 10 and multi-tenant isolation checks).
-- An explicit retest confirmation stating that all identified critical and high findings were remediated.
+- The fix status of the findings at retest (fixed, partially fixed, open).
 
-Validra provides this official signed letter with every Security Review (from 395 EUR, completed in approximately 5 business days).
+Validra provides a letter like this at the end of a Security Review (from 395 EUR, about 5 business days). It is not a certification or a guarantee, and each buyer decides what it accepts.
 
 For ready-to-use templates:
-- [Letter of Attestation Template](../../templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [Review confirmation letter template](../../templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
 - [B2B Security Questionnaire Master Answers](../../templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)

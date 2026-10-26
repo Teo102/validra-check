@@ -99,7 +99,7 @@ export async function POST(req: Request) {
 
 ## Resources
 
-- [Official Letter of Attestation Template](../../templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [Review confirmation letter template](../../templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
 - [B2B Security Questionnaire Master Answers](../../templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
 - [Manual Security Audit vs Automated Scanner](./manual-audit-vs-automated-scanner.md)
 - [Validra Security Review Scope](https://validra.dev/en/pricing)

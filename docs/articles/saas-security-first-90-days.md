@@ -14,7 +14,7 @@ Building a SaaS product without a baseline security foundation quickly leads to 
 | :--- | :--- | :--- | :--- |
 | **Days 1 to 30** | Foundations and Visibility | Secret inventory, 100% table RLS enforcement, robust authentication | Zero public tables exposed and clean validra-check scan |
 | **Days 31 to 60** | Application Hardening | Strict Zod validation, multi-tenant Server Action isolation, Stripe webhook verification | Two-account isolation test with verified HTTP 403 response |
-| **Days 61 to 90** | Validation and Due Diligence | External manual review at Day 75, 72-hour incident response procedure, signed Letter of Attestation | Signed attestation ready to deliver to enterprise procurement teams |
+| **Days 61 to 90** | Validation and Due Diligence | External manual review at Day 75, 72-hour incident response procedure, review confirmation letter | Letter ready to hand to enterprise procurement teams |
 
 ---
 
@@ -66,14 +66,14 @@ export const UpdateTenantSchema = z.object({
 Month three prepares your startup for vendor security assessments and buyer due diligence questionnaires.
 
 - **External manual review at Day 75:** This represents the pivotal milestone to commission an independent audit. The Validra Security Review (€395 to start and €790 maximum if vulnerabilities are discovered) delivers an exhaustive manual review of your six critical attack surfaces within 5 business days.
-- **Retest and signed Letter of Attestation:** Once any identified findings are addressed, Validra performs a free retest and issues an official signed Letter of Attestation.
+- **Retest and review confirmation letter:** Once any identified findings are addressed, Validra performs a limited retest of the fixed items and provides a review confirmation letter, which is neither a certification nor a guarantee.
 - **Incident response procedure:** Document a pragmatic procedure covering customer and regulatory notifications within 72 hours in the event of a confirmed personal data breach.
 
 ---
 
 ## Resources
 
-- [Official Letter of Attestation Template](../../templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [Review confirmation letter template](../../templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
 - [B2B Security Questionnaire Master Answers](../../templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
 - [SaaS Pre-Launch Security Checklist](./saas-pre-launch-security-checklist.md)
 - [Validra Security Review Pricing](https://validra.dev/en/pricing)
