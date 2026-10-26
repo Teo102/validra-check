@@ -92,6 +92,11 @@ npx validra-check https://staging.your-app.com || exit 1
 - [SaaS Security Questionnaire Guide (VSAQ, CAIQ, Due Diligence)](docs/articles/saas-security-questionnaire-guide.md)
 - [B2B Security Questionnaire Master Answers (7 Pillars)](templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
 - [Official Signed Letter of Attestation Template](templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [How Much Does a SaaS Security Audit Cost in 2026?](docs/articles/saas-security-audit-cost.md)
+- [SaaS Pre-Launch Security Checklist (10 Critical Checks)](docs/articles/saas-pre-launch-security-checklist.md)
+- [Manual Security Audit vs Automated Scanner](docs/articles/manual-audit-vs-automated-scanner.md)
+- [SaaS Security Roadmap: The 90-Day Technical Action Plan](docs/articles/saas-security-first-90-days.md)
+- [OWASP Top 10 for SaaS: Practical Security Checklist](docs/articles/owasp-top-10-saas-audit-checklist.md)
 - [Supabase RLS Data Exposure Technical Guide](docs/articles/supabase-rls-misconfigured.md)
 - For a full human review of your app, including what logged-in users can access: [Validra Security Review](https://validra.dev/en/pricing) — €395 to start, €790 max, only if we find something relevant.
 
