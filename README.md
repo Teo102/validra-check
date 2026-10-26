@@ -17,7 +17,7 @@ No install, no account, no dependencies.
 It looks at your app exactly like an anonymous visitor would:
 
 1. **Leaked secrets in client code.** It downloads your page and the JavaScript it loads, and looks for keys that should never reach a browser: Supabase `service_role` / `sb_secret_` keys, Stripe secret keys, OpenAI and Anthropic keys, GitHub tokens, AWS keys, Resend keys.
-2. **Supabase tables readable without logging in.** If it finds a Supabase project and its public key in your code (normal for Supabase apps), it checks which tables return data to someone who isn't logged in. This is the most common way apps built with Lovable, Bolt, Cursor, or v0 leak user data: Row-Level Security is missing or too permissive.
+2. **Supabase tables readable without logging in.** If it finds a Supabase project and its public key in your code (normal for Supabase apps), it checks which tables return data to someone who isn't logged in. This is the most common way apps built with Lovable, Bolt, Cursor, or v0 leak user data: Row-Level Security is missing or too permissive. See our [Supabase RLS Data Exposure Guide](docs/articles/supabase-rls-misconfigured.md) and our [OWASP Top 10 for Next.js & Supabase SaaS](docs/articles/owasp-top-10-saas-audit-checklist.md).
 3. **Public storage buckets.** Buckets whose files anyone can download.
 
 Example output:
@@ -35,6 +35,8 @@ Example output:
 ## What it does not check
 
 This is a quick, outside-in check. It does not test what a **logged-in** user can see of other users' data (IDOR, cross-tenant leaks), server actions, webhook handlers, or your business logic. Those are often where the serious issues are, and they need someone who understands how your product is supposed to work.
+
+Read our breakdown on [why automated scanners miss business logic flaws](docs/articles/manual-audit-vs-automated-scanner.md) and consult our [SaaS pre-launch security checklist](docs/articles/saas-pre-launch-security-checklist.md) before going live. If you are budgeting for external validation, see [how much a SaaS security audit costs in 2026](docs/articles/saas-security-audit-cost.md) and follow our [90-day technical SaaS security roadmap](docs/articles/saas-security-first-90-days.md).
 
 A clean result is a good sign, not a guarantee.
 

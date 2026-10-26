@@ -1,4 +1,4 @@
-# OWASP Top 10 for SaaS: A Practical Security Audit Checklist (2026)
+# OWASP Top 10 for Next.js & Supabase SaaS: A Practical Security Audit Checklist (2026)
 
 *Téo Brondel · October 2026 · ~10 min read*
 

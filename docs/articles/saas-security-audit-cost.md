@@ -12,7 +12,7 @@ When planning your cybersecurity budget, you must distinguish between three sepa
 
 | Audit Category | Typical Cost | Target Audience | Primary Focus |
 | :--- | :--- | :--- | :--- |
-| **Tier 1: Targeted Code & Architecture Review** | €395 to €3,000 | Early-stage startups, Next.js / Supabase apps | RLS policies, IDOR flaws, auth tokens, secret keys |
+| **Tier 1: Targeted Code & Architecture Review** | €395 to €3,000 | Early-stage startups, Next.js / Supabase apps, tools like Lovable, Cursor, Bolt, v0, Replit | RLS policies, IDOR flaws, auth tokens, secret keys |
 | **Tier 2: Standalone Application Pentest** | €5,000 to €25,000 | Growing SaaS, mid-market B2B deals | Full offensive grey-box testing, REST/GraphQL APIs |
 | **Tier 3: Enterprise Compliance (SOC 2, ISO 27001)** | €20,000 to €80,000+ | Enterprise vendors, enterprise procurement | GRC software, CPA audit fees, operational policies |
 
