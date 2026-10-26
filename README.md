@@ -96,7 +96,7 @@ npx validra-check https://staging.your-app.com || exit 1
 - [Review confirmation letter template](templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
 - [SaaS Security Audit Under €1,000: Real 2026 Costs](docs/articles/saas-security-audit-cost.md)
 - [SaaS Pre-Launch Security Checklist (10 Critical Checks)](docs/articles/saas-pre-launch-security-checklist.md)
-- [Manual Security Audit vs Automated Scanner](docs/articles/manual-audit-vs-automated-scanner.md)
+- [Manual Security Audit vs Automated Scanner: Affordable Pentest Alternative](docs/articles/manual-audit-vs-automated-scanner.md)
 - [SaaS Security Roadmap: The 90-Day Technical Action Plan](docs/articles/saas-security-first-90-days.md)
 - [OWASP Top 10 for SaaS: Practical Security Checklist](docs/articles/owasp-top-10-saas-audit-checklist.md)
 - [Supabase RLS Data Exposure Technical Guide](docs/articles/supabase-rls-misconfigured.md)

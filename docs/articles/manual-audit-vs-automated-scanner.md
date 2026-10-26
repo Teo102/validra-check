@@ -1,4 +1,4 @@
-# Manual Security Review vs Automated Scanners: Why Scanners Miss SaaS Authorization Flaws
+# Manual Security Review vs Automated Scanners: Affordable Pentest Alternative
 
 *Téo Brondel · October 2026 · ~10 min read*
 
@@ -58,6 +58,16 @@ curl -s -X GET "https://api.your-saas.com/api/invoices/inv_tenant_b_9842" \
 
 # If server returns HTTP 200 instead of 403 Forbidden, your app has a critical IDOR flaw.
 ```
+
+---
+
+## 5. An Affordable Pentest Alternative: Why Paying $10,000 to an Enterprise Agency is Outdated
+
+Traditional consulting agencies justify their €5,000 to €15,000 fees with heavy overhead: protracted discovery calls, auditing irrelevant infrastructure (office networks, WiFi, internal printers), and drafting 80-page Word documents.
+
+For a modern SaaS hosted on Vercel, Supabase, or AWS, most security risk lies in the **application layer, authentication flows, and data isolation policies**.
+
+By focusing on the real attack surfaces of modern web applications, Validra delivers a **rigorous manual code review combined with targeted offensive testing** from **€395** (€395 more only if the review finds security issues relevant to the agreed scope), completed in **about 5 business days**.
 
 ---
 
