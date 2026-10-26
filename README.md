@@ -89,6 +89,10 @@ npx validra-check https://staging.your-app.com || exit 1
 ## How to fix what it finds
 
 - The [free guide of 25 common vulnerabilities in AI-built apps](https://validra.dev/en/guide), with how to test and fix each one.
+- [SaaS Security Questionnaire Guide (VSAQ, CAIQ, Due Diligence)](docs/articles/saas-security-questionnaire-guide.md)
+- [B2B Security Questionnaire Master Answers (7 Pillars)](templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
+- [Official Signed Letter of Attestation Template](templates/LETTER_OF_ATTESTATION_TEMPLATE.md)
+- [Supabase RLS Data Exposure Technical Guide](docs/articles/supabase-rls-misconfigured.md)
 - For a full human review of your app, including what logged-in users can access: [Validra Security Review](https://validra.dev/en/pricing) — €395 to start, €790 max, only if we find something relevant.
 
 ---
