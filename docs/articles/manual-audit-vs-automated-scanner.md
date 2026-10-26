@@ -67,7 +67,7 @@ Traditional consulting agencies justify their €5,000 to €15,000 fees with he
 
 For a modern SaaS hosted on Vercel, Supabase, or AWS, most security risk lies in the **application layer, authentication flows, and data isolation policies**.
 
-By focusing on the real attack surfaces of modern web applications, Validra delivers a **rigorous manual code review combined with targeted offensive testing** from **€395** (€395 more only if the review finds security issues relevant to the agreed scope), completed in **about 5 business days**.
+By focusing on the real attack surfaces of modern web applications, [Validra's SaaS Security Audit](https://validra.dev/en/audit-saas) delivers an affordable pentest alternative with a **rigorous manual code review combined with targeted offensive testing** from [€395](https://validra.dev/en/pricing) (€395 more only if the review finds security issues relevant to the agreed scope), completed in **about 5 business days**.
 
 ---
 
