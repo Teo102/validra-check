@@ -1,4 +1,4 @@
-# How Much Does a SaaS Security Audit Cost in 2026? Pricing Guide & Breakdown
+# SaaS Security Audit Under €1,000: 2026 Cost Breakdown & Alternatives
 
 *Téo Brondel · October 2026 · ~9 min read*
 

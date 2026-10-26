@@ -94,7 +94,7 @@ npx validra-check https://staging.your-app.com || exit 1
 - [SaaS Security Questionnaire Guide (VSAQ, CAIQ, Due Diligence)](docs/articles/saas-security-questionnaire-guide.md)
 - [B2B Security Questionnaire Master Answers (7 Pillars)](templates/B2B_SECURITY_QUESTIONNAIRE_ANSWERS.md)
 - [Review confirmation letter template](templates/REVIEW_CONFIRMATION_LETTER_TEMPLATE.md)
-- [How Much Does a SaaS Security Audit Cost in 2026?](docs/articles/saas-security-audit-cost.md)
+- [SaaS Security Audit Under €1,000: Real 2026 Costs](docs/articles/saas-security-audit-cost.md)
 - [SaaS Pre-Launch Security Checklist (10 Critical Checks)](docs/articles/saas-pre-launch-security-checklist.md)
 - [Manual Security Audit vs Automated Scanner](docs/articles/manual-audit-vs-automated-scanner.md)
 - [SaaS Security Roadmap: The 90-Day Technical Action Plan](docs/articles/saas-security-first-90-days.md)
